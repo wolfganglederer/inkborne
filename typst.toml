@@ -1,0 +1,12 @@
+[package]
+name = "inkborne"
+version = "0.1.0"
+entrypoint = "inkborne.typ"
+authors = ["Wolfgang Lederer"]
+license = "MIT"
+description = "Write documents that resemble the style of the Daggerheart core rulebook."
+
+[template]
+path = "template"
+entrypoint = "main.typ"
+thumbnail = "thumbnail.png"
