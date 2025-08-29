@@ -1,5 +1,5 @@
 
-#let col_domains = (
+#let col-domains = (
   arcana: rgb("#6c308b"),
   blade: rgb("#af2025"),
   bone: rgb("#989d9f"),
@@ -11,121 +11,121 @@
   valor: rgb("e0591cff"),
 )
 
-#let col_adversaries = (
+#let col-adversaries = (
   fill: rgb("f4f0e5"),
   border: rgb("bead85"),
-  box_line: rgb("c0ab78"),
-  dot_line: rgb("d8caa7"),
-  box_fill: rgb("ffffff"),
+  box-line: rgb("c0ab78"),
+  dot-line: rgb("d8caa7"),
+  box-fill: rgb("ffffff"),
 )
 
-#let col_environment = (
+#let col-environment = (
   fill: rgb("edededff"),
   border: rgb("888686ff"),
-  box_line: rgb("231f20ff"),
-  box_fill: rgb("ffffff"),
+  box-line: rgb("231f20ff"),
+  box-fill: rgb("ffffff"),
 )
-#let col_gold = rgb("deb334ff")
+#let col-gold = rgb("deb334ff")
 
-#let col_darkgold = (
+#let col-darkgold = (
   name: "dark gold",
   chapter: rgb("#927421"),
-  table_head: rgb("#927421"),
-  table_dark: rgb("eee7d6ff"),
-  table_light: rgb("00000000"),
-  table_border: rgb("9c7f2fff"), // missing
-  example_fill: rgb("#fbf9f5"),
-  example_border: rgb("927421"),
+  table-head: rgb("#927421"),
+  table-dark: rgb("eee7d6ff"),
+  table-light: rgb("00000000"),
+  table-border: rgb("9c7f2fff"), // missing
+  example-fill: rgb("#fbf9f5"),
+  example-border: rgb("927421"),
   optional: rgb("#fbf9f5"),
-  enum_fill: rgb("#fbf9f5"),
-  enum_border: rgb("927421"),
+  enum-fill: rgb("#fbf9f5"),
+  enum-border: rgb("927421"),
 )
 
 
-#let col_green = (
+#let col-green = (
   name: "green",
   chapter: rgb("#496130"),
-  table_head: rgb("#496130"),
-  table_dark: rgb("#e8e8dd"),
-  table_light: rgb("#000000"),
-  table_border: rgb("#1e2418"),
-  example_fill: rgb("#f3f3ee"),
-  example_border: rgb("#969e78"),
+  table-head: rgb("#496130"),
+  table-dark: rgb("#e8e8dd"),
+  table-light: rgb("#000000"),
+  table-border: rgb("#1e2418"),
+  example-fill: rgb("#f3f3ee"),
+  example-border: rgb("#969e78"),
   optional: rgb("#edeae4"),
-  enum_fill: rgb("#f3f3ee"),
-  enum_border: rgb("#969e78"),
+  enum-fill: rgb("#f3f3ee"),
+  enum-border: rgb("#969e78"),
 )
 
 
-#let col_brown = (
+#let col-brown = (
   name: "brown",
   chapter: rgb("#b74617"),
-  table_head: rgb("#c3612f"),
-  table_dark: rgb("#f7e7da"),
-  table_light: rgb("00000000"),
-  table_border: rgb("#ebc5a9"), // missing
-  example_fill: rgb("#fbf3ec"),
-  example_border: rgb("#d89367"),
+  table-head: rgb("#c3612f"),
+  table-dark: rgb("#f7e7da"),
+  table-light: rgb("00000000"),
+  table-border: rgb("#ebc5a9"), // missing
+  example-fill: rgb("#fbf3ec"),
+  example-border: rgb("#d89367"),
   optional: rgb("#fbf3ec"),
-  enum_fill: rgb("#f8ebe1"),
-  enum_border: rgb("927421"),
+  enum-fill: rgb("#f8ebe1"),
+  enum-border: rgb("927421"),
 )
 
-#let col_purple = (
+#let col-purple = (
   name: "purple",
   chapter: rgb("#6c2f89"),
-  table_head: rgb("#834b9c"),
-  table_dark: rgb("#ede3f0"),
-  table_light: rgb("00000000"),
-  table_border: rgb("#ba98c8"), // missing
-  example_fill: rgb("#f6f0f7"),
-  example_border: rgb("#ab82bd"),
+  table-head: rgb("#834b9c"),
+  table-dark: rgb("#ede3f0"),
+  table-light: rgb("00000000"),
+  table-border: rgb("#ba98c8"), // missing
+  example-fill: rgb("#f6f0f7"),
+  example-border: rgb("#ab82bd"),
   optional: rgb("#f6f0f7"),
-  enum_fill: rgb("#f6f0f7"),
-  enum_border: rgb("#ab82bd"),
+  enum-fill: rgb("#f6f0f7"),
+  enum-border: rgb("#ab82bd"),
 )
 
 
-#let col_red = (
+#let col-red = (
   name: "red",
   chapter: rgb("#ad2023"),
-  table_head: rgb("#ba4036"),
-  table_dark: rgb("#f5e1d9"),
-  table_light: rgb("#000000"),
-  table_border: rgb("#771519"), // missing
-  example_fill: rgb("#faf0eb"),
-  example_border: rgb("#d07b68"),
+  table-head: rgb("#ba4036"),
+  table-dark: rgb("#f5e1d9"),
+  table-light: rgb("#000000"),
+  table-border: rgb("#771519"), // missing
+  example-fill: rgb("#faf0eb"),
+  example-border: rgb("#d07b68"),
   optional: rgb("#faf0eb"),
-  enum_fill: rgb("#faf0eb"),
-  enum_border: rgb("#d07b68"),
+  enum-fill: rgb("#faf0eb"),
+  enum-border: rgb("#d07b68"),
 )
 
-#let col_blue = (
+#let col-blue = (
   name: "blue",
   chapter: rgb("#3a6b7b"),
-  table_head: rgb("#58818f"),
-  table_dark: rgb("#e6ebed"),
-  table_light: rgb("000000"),
-  table_border: rgb("#a1b7bf"), // missing
-  example_fill: rgb("#f8f8f8"),
-  example_border: rgb("#8da8b2"),
+  table-head: rgb("#58818f"),
+  table-dark: rgb("#e6ebed"),
+  table-light: rgb("000000"),
+  table-border: rgb("#a1b7bf"), // missing
+  example-fill: rgb("#f8f8f8"),
+  example-border: rgb("#8da8b2"),
   optional: rgb("#ebeff1"),
-  enum_fill: rgb("#f8f8f8"),
-  enum_border: rgb("#8da8b2"),
+  enum-fill: rgb("#f8f8f8"),
+  enum-border: rgb("#8da8b2"),
 )
 
 
-#let col_act = (
-  "0": col_darkgold,
-  "1": col_green,
-  "2": col_brown,
-  "3": col_purple,
-  "4": col_red,
-  "5": col_blue,
-  "6": col_green,
-  "7": col_brown,
-  "8": col_purple,
-  "9": col_red,
-  "10": col_blue,
+#let col-act = (
+  "0": col-darkgold,
+  "1": col-green,
+  "2": col-brown,
+  "3": col-purple,
+  "4": col-red,
+  "5": col-blue,
+  "6": col-green,
+  "7": col-brown,
+  "8": col-purple,
+  "9": col-red,
+  "10": col-blue,
 )
 

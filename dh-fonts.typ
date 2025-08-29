@@ -10,13 +10,13 @@
 // https://fonnts.com/questa-slab-2/
 
 
-#let font_chapter = (
+#let font-chapter = (
   thin: "EvelethW03-CleanThin",
   thick: "EvelethW03-CleanRegular",
-  level_4: "Questa Sans",
+  level-4: "Questa Sans",
 )
 
-#let font_table = (
+#let font-table = (
   head: (
     font: "EvelethW03-CleanRegular",
     size: 8pt,
@@ -24,7 +24,7 @@
     fill: white,
   ),
 )
-#let font_adversaries = (
+#let font-adversaries = (
   name: (font: "EvelethW03-CleanRegular", size: 12pt),
   tier: (
     font: "FONTSPRING DEMO - Questa Slab",
@@ -36,7 +36,7 @@
   features: (font: "Questa Sans", weight: "bold", size: 10pt),
 )
 
-#let font_environment = (
+#let font-environment = (
   name: (font: "EvelethW03-CleanRegular", size: 12pt),
   tier: (
     font: "FONTSPRING DEMO - Questa Slab",
@@ -48,7 +48,7 @@
   features: (font: "Questa Sans", weight: "bold", size: 10pt),
 )
 
-#let font_tip = (
+#let font-tip = (
   tip: (
     font: "FONTSPRING DEMO - Questa Slab",
     size: 9pt,

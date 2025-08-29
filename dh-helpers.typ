@@ -2,11 +2,11 @@
 #import "dh-fonts.typ": *
 
 
-// int_to_string converts numbers to literals sofar only english and german are supported.
-// usage: #int_to_string.english.at(str(1))
+// int-to-string converts numbers to literals sofar only english and german are supported.
+// usage: #int-to-string.english.at(str(1))
 //
 
-#let int_to_string = (
+#let int-to-string = (
   english: (
     "1": "one",
     "2": "two",
@@ -32,7 +32,7 @@
 )
 
 
-#let dh_box(
+#let dh-box(
   body,
   diag: 3pt,
   inset: (x: 4pt, y: 10pt),
@@ -47,17 +47,17 @@
       inset: inset,
       body,
     ))
-    #let size_diag = size.width;
-    #let height_diag = height - diag;
+    #let size-diag = size.width;
+    #let height-diag = height - diag;
     #let width = size.width - diag;
 
     #polygon(
       (width, 0pt),
-      (size_diag, diag),
-      (size_diag, height_diag),
+      (size-diag, diag),
+      (size-diag, height-diag),
       (width, height),
       (diag, height),
-      (0pt, height_diag),
+      (0pt, height-diag),
       (0pt, diag),
       (diag, 0pt),
       stroke: stroke,
@@ -73,10 +73,10 @@
 
 
 
-#let dh_example(color: col_purple, content) = {
+#let dh-example(color: col-purple, content) = {
   box(
-    fill: color.example_fill,
-    stroke: (y: color.example_border),
+    fill: color.example-fill,
+    stroke: (y: color.example-border),
     width: 1fr,
     inset: 4pt,
     content,
@@ -84,19 +84,19 @@
   linebreak()
 }
 
-// #dh_example([This is an example])
+// #dh-example([This is an example])
 
 
-#let dh_optional(color: col_purple, content) = {
-  dh_box(stroke: none, fill: color.optional)[#content]
+#let dh-optional(color: col-purple, content) = {
+  dh-box(stroke: none, fill: color.optional)[#content]
 }
 
-// #dh_optional([This is an optional rule.])
+// #dh-optional([This is an optional rule.])
 
 
-#let dh_enum(color: col_purple, content) = {
-  box(fill: color.enum_fill, width: 1fr, inset: 5pt, stroke: (
-    y: 0.5pt + color.enum_border,
+#let dh-enum(color: col-purple, content) = {
+  box(fill: color.enum-fill, width: 1fr, inset: 5pt, stroke: (
+    y: 0.5pt + color.enum-border,
   ))[
     #set list(indent: 0em)
     #set list(marker: text("\u{2192}", font: "Capitana", size: 8.5pt))
@@ -104,12 +104,12 @@
   linebreak()
 }
 
-// #dh_enum([
+// #dh-enum([
 //   - eins
 //   - zwei
 // ])
 
-#let dh_adversaries(
+#let dh-adversaries(
   name: "Scary Monster",
   tier: 1,
   type: "Solo",
@@ -125,21 +125,21 @@
   damage: "d8+1 (phy)",
   experience: "Make nice blocks",
   features: [
-    *_Warped Fortitude - Passive:_* The Experiment is resistant to physical damage.
+    *-Warped Fortitude - Passive:-* The Experiment is resistant to physical damage.
 
 
-    *_Lurching Lunge - Action:_* Mark a Stress to spotlight the Experiment as an additional GM move instead of spending Fear.],
-  fonts: font_adversaries,
-  colors: col_adversaries,
+    *-Lurching Lunge - Action:-* Mark a Stress to spotlight the Experiment as an additional GM move instead of spending Fear.],
+  fonts: font-adversaries,
+  colors: col-adversaries,
 ) = {
-  dh_box(stroke: colors.border + 0.5pt, fill: colors.fill)[
+  dh-box(stroke: colors.border + 0.5pt, fill: colors.fill)[
     #text(..fonts.name)[#name]\
     #text(..fonts.tier)[Tier #tier #type]\
     #text(..fonts.text)[_#description _]\
     #text(..fonts.text)[*Motives & Tactics*: #motives]\
     #box(
-      fill: colors.box_fill,
-      stroke: (y: colors.box_line + 0.5pt),
+      fill: colors.box-fill,
+      stroke: (y: colors.box-line + 0.5pt),
       width: 1fr,
       inset: 4pt,
     )[
@@ -148,7 +148,7 @@
       *ATK:* #atk | *#attack: * #range | #damage\
       #v(-5pt)
       #line(length: 100%, stroke: (
-        paint: colors.dot_line,
+        paint: colors.dot-line,
         dash: "densely-dotted",
       ))
       #v(-6pt)
@@ -162,10 +162,10 @@
   ]
 }
 
-// #dh_adversaries()
+// #dh-adversaries()
 
 
-#let dh_environment(
+#let dh-environment(
   name: "Scary Environment",
   tier: 1,
   type: "Social",
@@ -182,17 +182,17 @@
     - *Failure with Fear:* Tick up 1 When the countdown triggers, the party has made it to the top of the cliff .
 
     *Fall - Action:* *Spend a Fear* to have a PC’s handhold fail, plummeting them toward the ground. If they aren’t saved on the next action, they hit the ground and tick up the countdown by 2. The PC takes 1d12 physical damage if the countdown is between 8 and 12, *2d12* between 4 and 7, and *3d12* at 3 or lower.],
-  fonts: font_environment,
-  colors: col_environment,
+  fonts: font-environment,
+  colors: col-environment,
 ) = {
-  dh_box(stroke: colors.border + 0.5pt, fill: colors.fill)[
+  dh-box(stroke: colors.border + 0.5pt, fill: colors.fill)[
     #text(..fonts.name)[#name]\
     #text(..fonts.tier)[Tier #tier #type]\
     #text(..fonts.text)[_#description _]\
     #text(..fonts.text)[*Impulses*: #impulses]\
     #box(
-      fill: colors.box_fill,
-      stroke: (y: colors.box_line + 0.5pt),
+      fill: colors.box-fill,
+      stroke: (y: colors.box-line + 0.5pt),
       width: 1fr,
       inset: 4pt,
     )[
@@ -208,25 +208,25 @@
   ]
 }
 
-// #dh_environment(adversaries: [Acid Burrower])
+// #dh-environment(adversaries: [Acid Burrower])
 
-#let dh_table(color: col_blue, ..args) = {
-  show table.cell.where(y: 0): set text(..font_table.head)
+#let dh-table(color: col-blue, ..args) = {
+  show table.cell.where(y: 0): set text(..font-table.head)
   table(
-    fill: (_, y) => if y == 0 { color.table_head } else if calc.even(y) {
-      color.table_dark
+    fill: (_, y) => if y == 0 { color.table-head } else if calc.even(y) {
+      color.table-dark
     },
-    stroke: (_, y) => if y == 0 { (bottom: color.table_border + 0.5pt) },
+    stroke: (_, y) => if y == 0 { (bottom: color.table-border + 0.5pt) },
     ..args
   )
 }
 
 
-#let dh_table_small(color: col_blue, ..args) = {
-  // show table.cell.where(y:0): set text(..font_table.head)
+#let dh-table-small(color: col-blue, ..args) = {
+  // show table.cell.where(y:0): set text(..font-table.head)
   table(
-    fill: (_, y) => if calc.even(y) { color.table_dark },
-    stroke: (_, y) => if y == 0 { (top: color.table_border + 1pt) },
+    fill: (_, y) => if calc.even(y) { color.table-dark },
+    stroke: (_, y) => if y == 0 { (top: color.table-border + 1pt) },
     ..args
   )
 }

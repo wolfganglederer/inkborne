@@ -4,9 +4,9 @@ version = "0.1.0"
 entrypoint = "inkborne.typ"
 authors = ["Wolfgang Lederer"]
 license = "MIT"
-description = "Write documents that resemble the style of the Daggerheart core rulebook."
-
-[template]
-path = "template"
-entrypoint = "main.typ"
-thumbnail = "thumbnail.png"
+description = "Create fancy documents that resemble the style of the Daggerheart core rulebook."
+repository = "https://github.com/wolfganglederer/inkborne"
+keywords = ["Daggerheart", "rpg", "DnD", "roleplaying", "games"]
+compiler = "0.13.1"
+categories = ["layout", "fun", "components", "book"]
+disciplines = ["design"]
