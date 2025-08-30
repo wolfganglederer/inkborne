@@ -10,6 +10,13 @@
 // https://fonnts.com/questa-slab-2/
 
 
+#let font-main = (font: "Questa Sans", weight: "light", size: 9pt)
+
+#let font-title = (
+  title: (font: "EvelethW03-CleanThin", weight: "light", size: 26pt),
+  author: (font: "EvelethW03-CleanThin", weight: "light", size: 12pt),
+)
+
 #let font-chapter = (
   thin: "EvelethW03-CleanThin",
   thick: "EvelethW03-CleanRegular",
