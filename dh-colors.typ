@@ -114,6 +114,19 @@
   enum-border: rgb("#8da8b2"),
 )
 
+#let col-dummy= (
+  name: "dummy",
+  chapter: rgb("000000"),
+  table-head: rgb("000000"),
+  table-dark: rgb("000000"),
+  table-light: rgb("000000"),
+  table-border: rgb("000000"), // missing
+  example-fill: rgb("000000"),
+  example-border: rgb("000000"),
+  optional: rgb("000000"),
+  enum-fill: rgb("000000"),
+  enum-border: rgb("000000"),
+)
 
 #let col-act = (
   "0": col-darkgold,

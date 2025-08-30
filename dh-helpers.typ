@@ -6,6 +6,9 @@
 // usage: #int-to-string.english.at(str(1))
 //
 
+
+#let col-chap-state = state("color", col-act.at("1"))
+
 #let int-to-string = (
   english: (
     "1": "one",
@@ -73,34 +76,46 @@
 
 
 
-#let dh-example(color: col-purple, content) = {
-  box(
-    fill: color.example-fill,
-    stroke: (y: color.example-border),
-    width: 1fr,
-    inset: 4pt,
-    content,
-  )
+#let dh-example(color: col-dummy, content) = {
+  context {
+    let color-ex = color
+    if color-ex.name == "dummy" { color-ex = col-chap-state.get() }
+    box(
+      fill: color-ex.example-fill,
+      stroke: (y: color-ex.example-border),
+      width: 1fr,
+      inset: 4pt,
+      content,
+    )
+  }
   linebreak()
 }
 
 // #dh-example([This is an example])
 
 
-#let dh-optional(color: col-purple, content) = {
-  dh-box(stroke: none, fill: color.optional)[#content]
+#let dh-optional(color: col-dummy, content) = {
+  context {
+    let color-du = color
+    if color-du.name == "dummy" { color-du = col-chap-state.get() }
+    dh-box(stroke: none, fill: color-du.optional)[#content]
+  }
 }
 
 // #dh-optional([This is an optional rule.])
 
 
-#let dh-enum(color: col-purple, content) = {
-  box(fill: color.enum-fill, width: 1fr, inset: 5pt, stroke: (
-    y: 0.5pt + color.enum-border,
-  ))[
-    #set list(indent: 0em)
-    #set list(marker: text("\u{2192}", font: "Capitana", size: 8.5pt))
-    #content]
+#let dh-enum(color: col-dummy, content) = {
+  context {
+    let color-en = color
+    if color-en.name == "dummy" { color-en = col-chap-state.get() }
+    box(fill: color-en.enum-fill, width: 1fr, inset: 5pt, stroke: (
+      y: 0.5pt + color-en.enum-border,
+    ))[
+      #set list(indent: 0em)
+      #set list(marker: text("\u{2192}", font: "Capitana", size: 8.5pt))
+      #content]
+  }
   linebreak()
 }
 
@@ -210,23 +225,29 @@
 
 // #dh-environment(adversaries: [Acid Burrower])
 
-#let dh-table(color: col-blue, ..args) = {
-  show table.cell.where(y: 0): set text(..font-table.head)
-  table(
-    fill: (_, y) => if y == 0 { color.table-head } else if calc.even(y) {
-      color.table-dark
-    },
-    stroke: (_, y) => if y == 0 { (bottom: color.table-border + 0.5pt) },
-    ..args
-  )
+#let dh-table(color: col-dummy, ..args) = {
+  context {
+    let color-tab = color
+    if color-tab.name == "dummy" { color-tab = col-chap-state.get() }
+    show table.cell.where(y: 0): set text(..font-table.head)
+    table(
+      fill: (_, y) => if y == 0 { color-tab.table-head } else if calc.even(y) {
+        color-tab.table-dark
+      },
+      stroke: (_, y) => if y == 0 { (bottom: color-tab.table-border + 0.5pt) },
+      ..args
+    )
+  }
 }
 
-
 #let dh-table-small(color: col-blue, ..args) = {
-  // show table.cell.where(y:0): set text(..font-table.head)
-  table(
-    fill: (_, y) => if calc.even(y) { color.table-dark },
-    stroke: (_, y) => if y == 0 { (top: color.table-border + 1pt) },
-    ..args
-  )
+  context {
+    let color-tab = color
+    if color-tab.name == "dummy" { color-tab = col-chap-state.get() }
+    table(
+      fill: (_, y) => if calc.even(y) { color-tab.table-dark },
+      stroke: (_, y) => if y == 0 { (top: color-tab.table-border + 1pt) },
+      ..args
+    )
+  }
 }
