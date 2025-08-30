@@ -136,7 +136,7 @@
   stress: 3,
   atk: +1,
   attack: "Longsword",
-  range: "Melee",
+  range-atk: "Melee",
   damage: "d8+1 (phy)",
   experience: "Make nice blocks",
   features: [
@@ -144,6 +144,7 @@
 
 
     *-Lurching Lunge - Action:-* Mark a Stress to spotlight the Experiment as an additional GM move instead of spending Fear.],
+  n: none,
   fonts: font-adversaries,
   colors: col-adversaries,
 ) = {
@@ -160,20 +161,30 @@
     )[
       #set text(..fonts.text)
       *Difficulty:* #difficulty | *Thresholds* #thresholds | *HP:* #hp | *Stress:* #stress \
-      *ATK:* #atk | *#attack: * #range | #damage\
-      #v(-5pt)
-      #line(length: 100%, stroke: (
-        paint: colors.dot-line,
-        dash: "densely-dotted",
-      ))
-      #v(-6pt)
-      *Experience:* #experience
+      *ATK:* #atk | *#attack: * #range-atk | #damage\
+      #if experience != none [
+        #v(-5pt)
+        #line(length: 100%, stroke: (
+          paint: colors.dot-line,
+          dash: "densely-dotted",
+        ))
+        #v(-6pt)
+        *Experience:* #experience]
     ]\
     #set par(hanging-indent: 1em, spacing: 5pt, leading: 3pt)
     #v(-6pt)
     #text(..fonts.features)[FEATURES]
 
     #text(..fonts.text)[ #features]
+    #if n != none {
+      for i in range(n) [
+
+        // hier steht dann der code für schöne  Adversaries
+        #line()
+        #name
+
+      ]
+    }
   ]
 }
 
