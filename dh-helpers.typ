@@ -11,6 +11,7 @@
 
 #let int-to-string = (
   english: (
+    "0": "zero",
     "1": "one",
     "2": "two",
     "3": "three",
@@ -22,6 +23,7 @@
     "9": "nine",
   ),
   german: (
+    "0": "null",
     "1": "eins",
     "2": "zwei",
     "3": "drei",

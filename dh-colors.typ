@@ -114,7 +114,7 @@
   enum-border: rgb("#8da8b2"),
 )
 
-#let col-dummy= (
+#let col-dummy = (
   name: "dummy",
   chapter: rgb("000000"),
   table-head: rgb("000000"),
@@ -130,15 +130,16 @@
 
 #let col-act = (
   "0": col-darkgold,
-  "1": col-green,
-  "2": col-brown,
-  "3": col-purple,
-  "4": col-red,
-  "5": col-blue,
-  "6": col-green,
-  "7": col-brown,
-  "8": col-purple,
-  "9": col-red,
-  "10": col-blue,
+  "1": col-darkgold,
+  "2": col-green,
+  "3": col-brown,
+  "4": col-purple,
+  "5": col-red,
+  "6": col-blue,
+  "7": col-green,
+  "8": col-brown,
+  "9": col-purple,
+  "10": col-red,
+  "11": col-blue,
 )
 

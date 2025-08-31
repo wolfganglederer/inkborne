@@ -13,8 +13,8 @@
   show heading.where(
     level: 1,
   ): it => {
-    let col-chap = col-act.at(str(counter(heading).get().first() - 1))
-    col-chap-state.update(col-act.at(str(counter(heading).get().first() - 1)))
+    let col-chap = col-act.at(str(counter(heading).get().first()))
+    col-chap-state.update(col-act.at(str(counter(heading).get().first())))
     set par(leading: 10pt)
     place(top + left, float: true, scope: "parent")[
       #text(
@@ -22,16 +22,18 @@
         font: font-chapter.at("thin"),
         weight: "thin",
         fill: col-chap.chapter,
-      )[#if counter(heading).get().first() == 1 [Introduction] else [
-          Chapter #int-to-string.at("english").at(str(counter(heading).get().first() - 1))
-        ]\
-        #text(
-          size: 21pt,
-          font: font-chapter.at("thick"),
-          weight: "regular",
-          fill: col-chap.chapter,
-          it.body,
-        )
+      )[#if counter(heading).get().first() == 1 [Introduction] else if (
+          counter(heading).get().first() == 0
+        ) [Contents] else [
+          Chapter #int-to-string.at("english").at(str(counter(heading).get().first() - 1)) \
+          #text(
+            size: 21pt,
+            font: font-chapter.at("thick"),
+            weight: "regular",
+            fill: col-chap.chapter,
+            it.body,
+          )
+        ]
       ]
     ]
   }
