@@ -180,9 +180,28 @@
       for i in range(n) [
 
         // hier steht dann der code für schöne  Adversaries
-        #line()
-        #name
+        #grid(
+          columns: (1fr, 1fr),
+          gutter: 12pt,
+          grid.cell(
+            colspan: 2,
+            inset: (y: 5pt, x: 2pt),
+            fill: colors.box-fill,
+            text(weight: "bold")[#name \##(i + 1)],
+          ),
 
+          [
+            HP: #for hp in range(int(hp)) {
+              box(circle(radius: 4pt))
+              h(2pt)
+            }
+          ],
+          [Stress #for stress in range(int(stress)) {
+              box(rect(height: 8pt, width: 8pt))
+              h(3pt)
+            }
+          ],
+        )
       ]
     }
   ]
