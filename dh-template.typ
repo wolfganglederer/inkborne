@@ -10,6 +10,48 @@
   publisher: [CC BY-NC-SA],
   body,
 ) = {
+  show outline.entry.where(
+    level: 1,
+  ): set block(above: 1.1em)
+
+  set outline.entry(fill: none)
+
+  show outline.entry.where(level: 1): it => {
+    // let chap-num = int-to-string.at(str(prefix()))
+    let chap-act = int-to-string.english.at(str(int(it.prefix().text) - 1))
+    link(
+      it.element.location(),
+      // Keep just the body, dropping
+      // the fill and the page.
+      it.indented(
+        [#box(
+          width: 8pt,
+          height: 8pt,
+          fill: col-act.at(it.prefix().text).chapter,
+        )],
+        text(..font-outline-chap, if it.prefix() == [1] [INTRODUCTION] else {
+          upper[Chapter #chap-act:\ ]
+          upper(text(weight: "medium", [ #it.body() \ ]))
+        }),
+      ),
+    )
+  }
+
+  show outline.entry.where(level: 2): it => {
+    link(
+      it.element.location(),
+      it.indented(none, text(..font-outline-sec, it.inner())),
+    )
+  }
+
+  show outline.entry.where(level: 3): it => {
+    link(
+      it.element.location(),
+      it.indented(none, text(..font-outline-sec, it.inner())),
+    )
+  }
+
+
   show heading.where(
     level: 1,
   ): it => {
@@ -87,6 +129,10 @@
 
     pagebreak()
   }
+
+  set page(columns: 3, margin: (inside: 23mm, outside: 19mm))
+
+  outline(depth: 3)
 
   set page(columns: 2, margin: (inside: 23mm, outside: 19mm))
   set columns(gutter: 4mm)

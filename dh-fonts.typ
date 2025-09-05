@@ -17,6 +17,21 @@
   author: (font: "EvelethW03-CleanThin", weight: "light", size: 12pt),
 )
 
+#let font-outline-chap = (
+  font: "Questa Sans",
+  weight: "bold",
+  size: 11pt,
+)
+
+#let font-outline-sec =(
+  // font: "Roboto Slab",
+  font: "FONTSPRING DEMO - Questa Slab",
+  weight: "medium",
+  size: 8pt,
+  style: "italic",
+)
+
+
 #let font-chapter = (
   thin: "EvelethW03-CleanThin",
   thick: "EvelethW03-CleanRegular",
